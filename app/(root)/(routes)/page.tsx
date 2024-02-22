@@ -25,7 +25,7 @@ const RootPage = async ({ searchParams }: rootPageProps) => {
         <div className="h-full p-4 space-y-2">
            {
             categoires.map((item)=>(
-                <h1>{item.name}</h1>
+                <h1 key={item.id}>{item.name}</h1>
             ))
            }
         </div>
