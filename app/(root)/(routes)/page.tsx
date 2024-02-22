@@ -1,6 +1,4 @@
 
-import { Suspense } from "react";
-
 interface rootPageProps {
     searchParams: {
         categoryId: string,
