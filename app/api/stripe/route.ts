@@ -1,10 +1,8 @@
 import { absoluteUrl } from "@/lib/utils";
-import { auth, currentUser, useAuth } from "@clerk/nextjs"
+import { auth, currentUser } from "@clerk/nextjs"
 import { NextResponse } from "next/server"
 import prismadb from '@/lib/primsadb'
 import { stripe } from "@/lib/stripe";
-
-const settingUrl = absoluteUrl("/settings");
 
 export async function GET() {
     try {
@@ -25,14 +23,14 @@ export async function GET() {
 
             const stripeSession = await stripe.billingPortal.sessions.create({
                 customer: userSubscription.stripeCustomerId,
-                return_url: settingUrl
+                return_url: absoluteUrl("/settings"),
             })
             return new NextResponse(JSON.stringify({ url: stripeSession.url }))
         }
 
         const stripeSession = await stripe.checkout.sessions.create({
-            success_url: settingUrl,
-            cancel_url: settingUrl,
+            success_url: absoluteUrl("/settings"),
+            cancel_url: absoluteUrl("/settings"),
             payment_method_types: ["card"],
             mode: 'subscription', 
             billing_address_collection: 'auto',
