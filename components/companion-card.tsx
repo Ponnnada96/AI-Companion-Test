@@ -23,9 +23,10 @@ const CompanionCard = ({ item }: CompanionCardProps) => {
                                            text-center text-muted-foreground">
                     <div className="relative w-32 h-32">
                         <Image
-                            fill
                             src={item.src}
                             alt="companion"
+                            width={127}
+                            height={127}
                             className="rounded-xl object-cover"
                         />
                     </div>

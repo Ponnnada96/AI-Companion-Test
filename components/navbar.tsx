@@ -16,7 +16,7 @@ interface NavBarProps {
 const NavBar = ({ isPro }: NavBarProps) => {
 
     const promodal = useProModal();
-    const { isSignedIn } = useAuth();
+    // const { isSignedIn } = useAuth();
 
     return (
         <div className="w-full z-50 flex justify-between items-center 
@@ -32,7 +32,7 @@ const NavBar = ({ isPro }: NavBarProps) => {
 
             </div>
             <div className="flex gap-x-3 items-center">
-                {isSignedIn && !isPro && (
+                {/* {isSignedIn && !isPro && (
                     <Button variant={'premiun'}
                         size={"sm"}
                         onClick={promodal.onOpen}
@@ -40,9 +40,9 @@ const NavBar = ({ isPro }: NavBarProps) => {
                         Upgrade
                         <Sparkles className="h-4 w-4 fill-white ml-2 text-white" />
                     </Button>
-                )}
+                )} */}
                 <ModeToggle />
-                <SignedIn>
+                {/* <SignedIn>
                     <UserButton afterSignOutUrl="/" />
                 </SignedIn>
                 <SignedOut>
@@ -51,7 +51,7 @@ const NavBar = ({ isPro }: NavBarProps) => {
                             Login
                         </Link>
                     </Button>
-                </SignedOut>
+                </SignedOut> */}
             </div>
         </div>);
 }
