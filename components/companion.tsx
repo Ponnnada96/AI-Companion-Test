@@ -24,8 +24,8 @@ const Companion = async ({ searchParams }: CompanionProps) => {
                 "Steve: *intensely* We don't just create products. We craft experiences, ways to change the world.\n" +
                 'Human: Your dedication is palpable.\n' +
                 'Steve: *with fervor* Remember, those who are crazy enough to think they can change the world are the ones who do.',
-            createdAt: '2024-02 - 19T13: 17: 21.211Z',
-            updatedAt: ' 2024-02 - 19T13: 17: 21.211Z',
+            createdAt: new Date(),
+            updatedAt: new Date(),
             categoryId: 'd5e5d0a4-48fd-495f-8c56-48a7cdeb8a05',
             _count: { messages: 7 }
         },
