@@ -1,5 +1,5 @@
-import NavBar from "@/components/navbar";
-import SideBar from "@/components/side-bar";
+// import NavBar from "@/components/navbar";
+// import SideBar from "@/components/side-bar";
 
 const RootLayout = async ({ children }: { children: React.ReactNode }) => {
 
