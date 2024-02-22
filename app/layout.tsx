@@ -1,10 +1,7 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
-import { ClerkProvider } from '@clerk/nextjs'
 import { ThemeProvider } from "@/components/theme-provder";
-import { Toaster } from "@/components/ui/toaster";
-import { ProModal } from "@/components/pro-modal";
 import { ErrorBoundary } from "react-error-boundary";
 import { fallbackRender } from "@/components/error-boundary";
 
@@ -28,21 +25,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    
-      <ClerkProvider>
-        <html lang="en" suppressHydrationWarning>
-          <body className={poppins.className}>
-            <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
-              <ProModal />
-            <ErrorBoundary fallbackRender={fallbackRender}>
-              {children}
-            </ErrorBoundary>
-              <Toaster />
-            </ThemeProvider>
-          </body>
-        </html>
-      </ClerkProvider>
-    
+
+    <html lang="en" suppressHydrationWarning>
+      <body className={poppins.className}>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+          <ErrorBoundary fallbackRender={fallbackRender}>
+            {children}
+          </ErrorBoundary>
+        </ThemeProvider>
+      </body>
+    </html>
 
   );
 }
