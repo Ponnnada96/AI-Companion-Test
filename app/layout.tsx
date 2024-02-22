@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
-import { ThemeProvider } from "@/components/theme-provder";
+
 import { ErrorBoundary } from "react-error-boundary";
-import { fallbackRender } from "@/components/error-boundary";
 
 
 
@@ -28,11 +27,9 @@ export default function RootLayout({
 
     <html lang="en" suppressHydrationWarning>
       <body className={poppins.className}>
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
-          <ErrorBoundary fallbackRender={fallbackRender}>
+    
             {children}
-          </ErrorBoundary>
-        </ThemeProvider>
+      
       </body>
     </html>
 
