@@ -1,5 +1,6 @@
 
 import prismadb from "@/lib/primsadb";
+import { UserButton } from "@clerk/nextjs";
 
 interface rootPageProps {
     searchParams: {
@@ -21,6 +22,7 @@ const RootPage = async ({ searchParams }: rootPageProps) => {
                     </h1>
                 ))
             }
+            <UserButton/>
         </div>
     );
 }
