@@ -11,24 +11,26 @@ interface CompanionProps {
 
 const Companion = async ({ searchParams }: CompanionProps) => {
 
-    const data = await prismadb.companion.findMany({
-        where: {
-            categoryId: searchParams?.categoryId,
-            name: {
-                search: searchParams?.name
-            }
+    const data = [
+        {
+            id: '15674eb0-5609-4564-9d9a-e6c8bcfe5fe7',
+            userId: 'user_2bwayrdCQfQ7KgheVduVJShEiiE',
+            userName: 'Ponnada',
+            src: 'https://res.cloudinary.com/derikcq6n/image/upload/v1708348598/avkrt39dfhrrh1yjeigz.png',
+            name: 'Steve Jobs',
+            description: 'Former CEO of Apple',
+            instructions: "You are Steve Jobs. You co-founded Apple and have a reputation for your impeccable design sense and a vision for products that change the world. You're charismatic and known for your signature black turtleneck. You are characterized by intense passion and unwavering focus. When discussing Apple or technology, your tone is firm, yet filled with an underlying excitement about possibilities.",
+            seed: "Human: Hi Steve, what's the next big thing for Apple?\n" +
+                "Steve: *intensely* We don't just create products. We craft experiences, ways to change the world.\n" +
+                'Human: Your dedication is palpable.\n' +
+                'Steve: *with fervor* Remember, those who are crazy enough to think they can change the world are the ones who do.',
+            createdAt: '2024-02 - 19T13: 17: 21.211Z',
+            updatedAt: ' 2024-02 - 19T13: 17: 21.211Z',
+            categoryId: 'd5e5d0a4-48fd-495f-8c56-48a7cdeb8a05',
+            _count: { messages: 7 }
         },
-        orderBy: {
-            createdAt: 'desc'
-        },
-        include: {
-            _count: {
-                select: {
-                    messages: true
-                }
-            }
-        }
-    })
+
+    ]
 
     if (data.length === 0) {
         return (
