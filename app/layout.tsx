@@ -28,19 +28,21 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ErrorBoundary fallbackRender={fallbackRender}>
+    
       <ClerkProvider>
         <html lang="en" suppressHydrationWarning>
           <body className={poppins.className}>
             <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
               <ProModal />
+            <ErrorBoundary fallbackRender={fallbackRender}>
               {children}
+            </ErrorBoundary>
               <Toaster />
             </ThemeProvider>
           </body>
         </html>
       </ClerkProvider>
-    </ErrorBoundary>
+    
 
   );
 }
