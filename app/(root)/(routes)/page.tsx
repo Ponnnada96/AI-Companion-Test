@@ -1,6 +1,5 @@
 
 import prismadb from "@/lib/primsadb";
-import { Suspense } from "react";
 
 interface rootPageProps {
     searchParams: {
