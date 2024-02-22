@@ -1,11 +1,12 @@
 import NavBar from "@/components/navbar";
 import SideBar from "@/components/side-bar";
-import { checkSubscription } from "@/lib/subscription";
+// import { checkSubscription } from "@/lib/subscription";
 import { StrictMode } from "react";
 
 const RootLayout = async ({ children }: { children: React.ReactNode }) => {
 
-    const isUserSubscribed = await checkSubscription();
+    const isUserSubscribed = false;
+    // const isUserSubscribed = await checkSubscription();
 
     return (
         <StrictMode>

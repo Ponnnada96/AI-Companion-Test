@@ -1,5 +1,5 @@
 import Image from "next/image";
-import prismadb from "@/lib/primsadb";
+// import prismadb from "@/lib/primsadb";
 import CompanionCard from "./companion-card";
 
 interface CompanionProps {
