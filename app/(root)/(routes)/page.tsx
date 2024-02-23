@@ -2,14 +2,9 @@
 import prismadb from "@/lib/primsadb";
 import { UserButton } from "@clerk/nextjs";
 
-interface rootPageProps {
-    searchParams: {
-        categoryId: string,
-        name: string
-    }
-}
 
-const RootPage = async ({ searchParams }: rootPageProps) => {
+
+const RootPage = async () => {
 
     const categoires = await prismadb.category.findMany();
 
